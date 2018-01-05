@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--Common color-->
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#009578</color>
+    <color name="colorAccent">#20C2A2</color>
+    <color name="navigationBarColor">#009578</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="windowBackground">#D4E2E3</color>
+
+    <!--Custom color-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#cccccc</color>
+    <color name="line">#f5f5f5</color>
+    <color name="red">#ff0000</color>
+    <color name="dark">#757575</color>
+    <color name="colorButton">#20C2A2</color>
+    <color name="colorHyperlink">#2AC3A4</color>
+    <color name="colorFriendName">#919191</color>
+    <color name="colorFriendStatus">#a3a3a3</color>
+    <color name="colorBackPoint">#222222</color>
+
 </resources>

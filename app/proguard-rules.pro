@@ -95,3 +95,5 @@
   **[] $VALUES;
   public *;
 }
+# for DexGuard only
+-keepresourcexmlelements manifest/application/meta-data@value=GlideModule

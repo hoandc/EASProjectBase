@@ -5,7 +5,7 @@ def versionMajor = 1
 def versionMinor = 0
 def versionPatch = 0
 
-def getBuildTime() {
+def static getBuildTime() {
     return System.currentTimeMillis()
 }
 
@@ -32,10 +32,11 @@ android {
         }
 
         release {
-            keyAlias ''
-            keyPassword ''
-            storeFile file('../release.jks')
-            storePassword ''
+            // Change keystore for release at here.
+            storeFile file('../debug.keystore')
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
         }
     }
 
@@ -45,7 +46,7 @@ android {
             zipAlignEnabled true
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
             signingConfig signingConfigs.dev
         }
 
@@ -63,21 +64,36 @@ android {
 
     productFlavors {
         dev {
-            buildConfigField "String", "BASE_URL", '"https://reqres.in/api"'
+            buildConfigField "String", "BASE_URL", '"https://reqres.in/api/"'
             buildConfigField "String", "SERVER_URL_LOAD_IMAGE", '""'
             buildConfigField "java.util.Date", "BUILD_TIME", "new java.util.Date(" + getBuildTime() + "L)"
             buildConfigField "int", "CACHETIME", "432000" // 5days
-            buildConfigField "java.lang.String", "AUTHOR", "\"Cong Hoan\""
+            buildConfigField "java.lang.String", "AUTHOR", '"Cong Hoan"'
             manifestPlaceholders = [google_map_key: ""]
         }
+
+        stg {
+            buildConfigField "String", "BASE_URL", '"https://reqres.in/api/"'
+            buildConfigField "String", "SERVER_URL_LOAD_IMAGE", '""'
+            buildConfigField "java.util.Date", "BUILD_TIME", "new java.util.Date(" + getBuildTime() + "L)"
+            buildConfigField "int", "CACHETIME", "432000" // 5days
+            buildConfigField "java.lang.String", "AUTHOR", '"Cong Hoan"'
+            manifestPlaceholders = [google_map_key: ""]
+        }
+
         prod {
             buildConfigField "String", "BASE_URL", '"https://reqres.in/api/"'
             buildConfigField "String", "SERVER_URL_LOAD_IMAGE", '""'
             buildConfigField "java.util.Date", "BUILD_TIME", "new java.util.Date(" + getBuildTime() + "L)"
             buildConfigField "int", "CACHETIME", "432000" // 5days
-            buildConfigField "java.lang.String", "AUTHOR", "\"Cong Hoan\""
+            buildConfigField "java.lang.String", "AUTHOR", '"Cong Hoan"'
             manifestPlaceholders = [google_map_key: ""]
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     packagingOptions {
@@ -96,12 +112,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Test
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    // support libraries
+    // Support libraries
     compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
     compile "com.android.support:design:$rootProject.supportLibraryVersion"
     compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
@@ -114,16 +132,14 @@ dependencies {
 
     compile "com.android.support:multidex:$rootProject.ext.multidexVersion"
 
-    // SDP - a scalable size unit
-    compile "com.intuit.sdp:sdp-android:$rootProject.ext.sdpAndroidVersion"
-
     // Google API
-    compile "com.google.android.gms:play-services-auth:$rootProject.ext.playServices"
-    compile "com.google.android.gms:play-services:$rootProject.ext.playServices"
+    // compile "com.google.android.gms:play-services-auth:$rootProject.ext.playServices"
+    // compile "com.google.android.gms:play-services:$rootProject.ext.playServices"
+
     // Map
-    compile "com.google.android.gms:play-services-maps:$rootProject.ext.playServices"
-    compile "com.google.android.gms:play-services-location:$rootProject.ext.playServices"
-    compile "com.google.android.gms:play-services-places:$rootProject.ext.playServices"
+    // compile "com.google.android.gms:play-services-maps:$rootProject.ext.playServices"
+    // compile "com.google.android.gms:play-services-location:$rootProject.ext.playServices"
+    // compile "com.google.android.gms:play-services-places:$rootProject.ext.playServices"
 
     //butter knife
     compile "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
@@ -133,16 +149,29 @@ dependencies {
     compile "org.greenrobot:eventbus:$rootProject.eventbusVersion"
 
     // CircleImageView
-    compile "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
+    // compile "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
 
-    // Loading Image
-    compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    // Glide loading Image
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
+
+    // Gson Parsing
+    compile "com.google.code.gson:gson:$rootProject.gsonVersion"
 
     //retrofit
-    compile "com.google.code.gson:gson:$rootProject.gsonVersion"
     compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitVersion"
     compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
     compile "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"
+
+    // Dragger 2
+    compile "com.google.dagger:dagger:$rootProject.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+
+    //reactive
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+
 }
 
 configurations.all {

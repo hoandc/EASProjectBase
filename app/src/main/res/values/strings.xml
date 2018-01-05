@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">EASProjectBase</string>
+
+    <!--Dialog-->
+    <string name="title_dialog">@string/app_name</string>
+    <string name="waiting_message">Please wait</string>
+
+    <!--Error-->
+    <string name="error_invalid_user_name">The user name is invalid</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_incorrect_email_password">The email address or password are incorrect!</string>
+    <string name="error_not_connect_to_internet">You are not connect to internet</string>
+    <string name="error_expire_token">Expire token</string>
+    <string name="error_unknown">Unknown error</string>
+
+    <!--Action-->
+    <string name="action_login">Login</string>
+    <string name="action_register">Register</string>
+    <string name="action_ok">OK</string>
+    <string name="action_submit">Submit</string>
+
+    <!--Login-->
+    <string name="forgot_your_pass">Forgot your password?</string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+
 </resources>
