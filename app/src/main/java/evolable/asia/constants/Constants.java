@@ -24,8 +24,7 @@ public interface Constants {
 
     // HTTP Code Status
     int HTTP_AUTHENTICATION = 401;
-
-
+    int HTTP_INTERNET_CONNECTION = -40;
 
     // message default
     String FAIL_CONNECT_MESSAGE = "The application can't connect to server";

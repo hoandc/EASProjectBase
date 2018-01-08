@@ -11,7 +11,7 @@
     <dimen name="xxxlarge_text_size">26sp</dimen>
 
     <!--radius-->
-    <dimen name="radius_5">5dp</dimen>
+    <dimen name="radius_7">7dp</dimen>
 
     <!--margin size-->
     <dimen name="tiny_margin">10dp</dimen>
@@ -24,7 +24,5 @@
 
     <!--logo size-->
     <dimen name="logo_size">90dp</dimen>
-    <dimen name="input_height">50dp</dimen>
-
 
 </resources>

@@ -1,6 +1,6 @@
 package evolable.asia.ui.splash;
 
-import evolable.asia.ui.base.BaseScreenMvpView;
+import evolable.asia.ui.base.BaseScreenMVPView;
 
 /*
  * ******************************************************************************
@@ -8,7 +8,7 @@ import evolable.asia.ui.base.BaseScreenMvpView;
  *  Author HoanDC. Create on 1/5/2018.
  * ******************************************************************************
  */
-public interface SplashMvpView extends BaseScreenMvpView {
+public interface SplashMVPView extends BaseScreenMVPView {
 
     void navigateMainScreen();
 

@@ -1,21 +1,21 @@
-package evolable.asia.models;
-
-import javax.inject.Inject;
+package evolable.asia.models.realm;
 
 import io.realm.Realm;
 
 /*
  * ******************************************************************************
  *  Copyright Ⓒ 2018. All rights reserved
- *  Author HoanDC. Create on 1/3/2018.
+ *  Author HoanDC. Create on 1/8/2018.
  * ******************************************************************************
  */
-public class DatabaseManager {
+public class Repository {
     private final Realm realm;
 
-    @Inject
-    public DatabaseManager(Realm realm) {
+    public Repository(Realm realm) {
         this.realm = realm;
     }
 
+    protected Realm getRealmInstance() {
+        return realm;
+    }
 }

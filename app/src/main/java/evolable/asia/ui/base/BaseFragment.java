@@ -33,7 +33,7 @@ import evolable.asia.utils.Utils;
  *  Author HoanDC. Create on 5/1/2018.
  * ******************************************************************************
  */
-public abstract class BaseFragment extends Fragment implements MvpView {
+public abstract class BaseFragment extends Fragment implements MVPView {
 
     private final String SLIDE_KEY = "slide_key";
     protected BaseActivity activity;

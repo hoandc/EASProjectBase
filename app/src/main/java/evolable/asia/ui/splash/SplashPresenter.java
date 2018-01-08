@@ -4,7 +4,7 @@ import android.os.Handler;
 
 import javax.inject.Inject;
 
-import evolable.asia.models.DataManager;
+import evolable.asia.models.manager.DataManager;
 import evolable.asia.models.entities.User;
 import evolable.asia.ui.base.BasePresenter;
 import retrofit2.Retrofit;
@@ -15,7 +15,7 @@ import retrofit2.Retrofit;
  *  Author HoanDC. Create on 1/5/2018.
  * ******************************************************************************
  */
-public class SplashPresenter extends BasePresenter<SplashMvpView> {
+public class SplashPresenter extends BasePresenter<SplashMVPView> {
 
     private final long DELAY_TIME = 2500;
 
@@ -25,18 +25,22 @@ public class SplashPresenter extends BasePresenter<SplashMvpView> {
     }
 
     @Override
-    public void initialView(SplashMvpView mvpView) {
+    public void initialView(SplashMVPView mvpView) {
         super.initialView(mvpView);
     }
 
-    public void init(){
+    public void start() {
         Handler handler = new Handler();
         handler.postDelayed(() -> navigateScreen(), (DELAY_TIME));
     }
 
-    private void navigateScreen(){
-//        User user = dataManager.getDatabaseManager();
-        getMvpView().navigateLogin();
+    private void navigateScreen() {
+        User user = dataManager.getDatabaseManager().getUser();
+        if (user == null) {
+            getMVPView().navigateLogin();
+        } else {
+            getMVPView().navigateMainScreen();
+        }
     }
 
     @Override

@@ -1,10 +1,4 @@
-/*
- * ******************************************************************************
- *  Copyright Ⓒ 2017. All rights reserved
- *  Author HoanDC. Create on 29/03/2017.
- * ******************************************************************************
- */
-package evolable.asia.models;
+package evolable.asia.models.manager;
 
 import javax.inject.Inject;
 

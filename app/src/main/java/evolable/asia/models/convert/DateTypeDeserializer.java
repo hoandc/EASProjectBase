@@ -1,9 +1,3 @@
-/*
- * ******************************************************************************
- *  Copyright Ⓒ 2017. All rights reserved
- *  Author HoanDC. Create on 13/04/2017.
- * ******************************************************************************
- */
 package evolable.asia.models.convert;
 
 import com.google.gson.JsonDeserializationContext;

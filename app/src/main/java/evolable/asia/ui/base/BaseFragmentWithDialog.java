@@ -18,7 +18,7 @@ import evolable.asia.utils.Utils;
  *  Author HoanDC. Create on 4/1/2018.
  * ******************************************************************************
  */
-public abstract class BaseFragmentWithDialog extends BaseFragment implements BaseScreenMvpView {
+public abstract class BaseFragmentWithDialog extends BaseFragment implements BaseScreenMVPView {
     protected MaterialDialog progressDialog, alertDialog;
     protected boolean isCancelProgressDialog = true;
 

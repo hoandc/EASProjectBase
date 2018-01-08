@@ -1,4 +1,4 @@
-package evolable.asia.models;
+package evolable.asia.models.manager;
 
 import android.support.annotation.NonNull;
 
@@ -6,9 +6,13 @@ import java.io.File;
 
 import javax.inject.Inject;
 
+import evolable.asia.models.entities.User;
 import evolable.asia.models.networking.NetworkService;
+import evolable.asia.models.responses.AuthenticResponse;
+import io.reactivex.Observable;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
+
 /*
  * ******************************************************************************
  *  Copyright Ⓒ 2018. All rights reserved
@@ -38,6 +42,10 @@ public class NetworkManager {
     public static RequestBody createFileRequestBody(@NonNull File file) {
         return RequestBody.create(
                 MediaType.parse(MULTIPART_FORM_DATA), file);
+    }
+
+    public Observable<AuthenticResponse> login(User user){
+       return networkService.login(user.getEmail(), user.getPassword());
     }
 
 }

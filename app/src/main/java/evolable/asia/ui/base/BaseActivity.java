@@ -32,7 +32,7 @@ import evolable.asia.utils.Utils;
  *  Author HoanDC. Create on 1/3/2018.
  * ******************************************************************************
  */
-public abstract class BaseActivity extends AppCompatActivity implements MvpView {
+public abstract class BaseActivity extends AppCompatActivity implements MVPView {
     protected final String TAG = this.getClass().getSimpleName();
     private final String SLIDE_KEY = "slide_key";
     private boolean isSlide = false;

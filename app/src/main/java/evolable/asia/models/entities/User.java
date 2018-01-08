@@ -1,15 +1,29 @@
 package evolable.asia.models.entities;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
 /*
  * ******************************************************************************
  *  Copyright Ⓒ 2018. All rights reserved
  *  Author HoanDC. Create on 1/3/2018.
  * ******************************************************************************
  */
-public class User {
+public class User extends RealmObject{
 
-    private String email;
+    @SerializedName("email")
+    @Expose
+    String email;
     private String password;
+    @SerializedName("token")
+    @Expose
+    private String token;
+
+    public User() {
+    }
 
     public User(String email, String password) {
         this.email = email;
@@ -30,5 +44,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

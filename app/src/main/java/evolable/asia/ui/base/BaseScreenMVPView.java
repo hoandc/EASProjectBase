@@ -8,7 +8,7 @@ import android.support.annotation.StringRes;
  *  Author HoanDC. Create on 1/3/2018.
  * ******************************************************************************
  */
-public interface BaseScreenMvpView extends MvpView{
+public interface BaseScreenMVPView extends MVPView {
 
     void createProgressDialog();
 

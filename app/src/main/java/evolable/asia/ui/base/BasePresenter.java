@@ -2,7 +2,7 @@ package evolable.asia.ui.base;
 
 import android.support.annotation.CallSuper;
 
-import evolable.asia.models.DataManager;
+import evolable.asia.models.manager.DataManager;
 import evolable.asia.models.entities.ApiError;
 import evolable.asia.utils.exception.HttpUtil;
 import retrofit2.Retrofit;
@@ -13,7 +13,7 @@ import retrofit2.Retrofit;
  *  Author HoanDC. Create on 1/3/2018.
  * ******************************************************************************
  */
-public abstract class BasePresenter<V extends MvpView> implements Presenter<V> {
+public abstract class BasePresenter<V extends MVPView> implements Presenter<V> {
 
     private V mvpView;
 
@@ -41,7 +41,7 @@ public abstract class BasePresenter<V extends MvpView> implements Presenter<V> {
         return mvpView != null;
     }
 
-    public final V getMvpView() {
+    public final V getMVPView() {
         return mvpView;
     }
 
@@ -53,12 +53,12 @@ public abstract class BasePresenter<V extends MvpView> implements Presenter<V> {
 
     public void notifyNoNetwork() {
         if (isInitialView()) {
-            getMvpView().showNoNetworkAlert();
+            getMVPView().showNoNetworkAlert();
         }
     }
 
     public boolean isConnectToInternet() {
-        return !isInitialView() || getMvpView().isConnectToInternet();
+        return !isInitialView() || getMVPView().isConnectToInternet();
     }
 
     public ApiError getErrorFromHttp(Throwable error) {

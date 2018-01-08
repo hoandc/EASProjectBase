@@ -1,10 +1,3 @@
-/*
- * ******************************************************************************
- *  Copyright Ⓒ 2016. All rights reserved
- *  Author TrinhQuan. Create on 2016/10/28
- * ******************************************************************************
- */
-
 package evolable.asia.utils.exception;
 
 import retrofit2.Response;
@@ -21,12 +14,16 @@ public class UncaughtHttpException extends RuntimeException {
         this.response = response;
     }
 
-    /** HTTP status code. */
+    /**
+     * HTTP status code.
+     */
     public int code() {
         return code;
     }
 
-    /** HTTP status message. */
+    /**
+     * HTTP status message.
+     */
     public String message() {
         return message;
     }

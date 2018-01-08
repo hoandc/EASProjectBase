@@ -3,8 +3,9 @@ package evolable.asia.ui.splash;
 import javax.inject.Inject;
 
 import evolable.asia.R;
-import evolable.asia.ui.base.BaseActivity;
+import evolable.asia.ui.authens.login.LoginActivity;
 import evolable.asia.ui.base.BaseActivityWithDialog;
+import evolable.asia.ui.main.MainActivity;
 
 /*
  * ******************************************************************************
@@ -12,7 +13,7 @@ import evolable.asia.ui.base.BaseActivityWithDialog;
  *  Author HoanDC. Create on 1/4/2018.
  * ******************************************************************************
  */
-public class SplashActivity extends BaseActivityWithDialog implements SplashMvpView{
+public class SplashActivity extends BaseActivityWithDialog implements SplashMVPView {
 
     @Inject
     SplashPresenter presenter;
@@ -31,16 +32,18 @@ public class SplashActivity extends BaseActivityWithDialog implements SplashMvpV
     protected void initial() {
         getActivityComponent().inject(this);
         presenter.initialView(this);
-        presenter.init();
+        presenter.start();
     }
 
     @Override
     public void navigateMainScreen() {
-
+        navigateToActivity(MainActivity.class);
+        finish();
     }
 
     @Override
     public void navigateLogin() {
-
+        navigateToActivity(LoginActivity.class);
+        finish();
     }
 }

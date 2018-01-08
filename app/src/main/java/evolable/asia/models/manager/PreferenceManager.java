@@ -1,4 +1,4 @@
-package evolable.asia.models;
+package evolable.asia.models.manager;
 
 import android.content.Context;
 import android.content.SharedPreferences;

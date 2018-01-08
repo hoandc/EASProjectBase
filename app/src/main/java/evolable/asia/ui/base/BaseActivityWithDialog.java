@@ -15,10 +15,9 @@ import evolable.asia.utils.Utils;
  *  Author HoanDC. Create on 5/1/2018.
  * ******************************************************************************
  */
-public abstract class BaseActivityWithDialog extends BaseActivity implements BaseScreenMvpView {
+public abstract class BaseActivityWithDialog extends BaseActivity implements BaseScreenMVPView {
 
     protected MaterialDialog progressDialog, alertDialog;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,6 +37,9 @@ public abstract class BaseActivityWithDialog extends BaseActivity implements Bas
 
     @Override
     public void showProgressDialog() {
+        if (progressDialog == null) {
+            createProgressDialog();
+        }
         if (progressDialog != null && !progressDialog.isShowing()) {
             progressDialog.show();
         }

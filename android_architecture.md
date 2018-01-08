@@ -1,6 +1,6 @@
 # Architecture Guidelines
 
-* Use Dagger2 for Dependencies Injection								
+* Use Dagger2 for Dependencies Injection [see more](https://en.wikipedia.org/wiki/Dependency_injection)								
 * Use Gson to Parser JSON 
 * Use Retrofit2 as HttpClient [see more](http://square.github.io/retrofit/)
 * Use RxJava/RxAndroid for better performance
@@ -11,7 +11,7 @@
 * Use EventBus to simplifies the communication between components [see more](https://github.com/greenrobot/EventBus)
 * Use Material Dialogs with material style [see more](https://github.com/afollestad/material-dialogs)
 
-The architecture of our Android apps is based on the [MVP](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)(https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html) (Model View Presenter) pattern.
+The architecture of our Android apps is based on the [MVP](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) (Model View Presenter) pattern.
  
 [see more]: (https://codelabs.developers.google.com/codelabs/android-testing/index.html)
 

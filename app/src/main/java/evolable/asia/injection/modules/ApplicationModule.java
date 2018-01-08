@@ -42,7 +42,7 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    NetworkService networkService(Retrofit retrofit){
+    NetworkService networkService(Retrofit retrofit) {
         return retrofit.create(NetworkService.class);
     }
 

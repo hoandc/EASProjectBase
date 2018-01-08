@@ -9,7 +9,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 import evolable.asia.injection.ApplicationContext;
 import evolable.asia.injection.modules.ApplicationModule;
-import evolable.asia.models.DataManager;
+import evolable.asia.models.manager.DataManager;
 import evolable.asia.ui.base.BaseActivity;
 import evolable.asia.ui.base.BaseFragment;
 import io.realm.Realm;

@@ -35,10 +35,10 @@ ext {
     circleimageviewVersion = '2.1.0'
     realmVersion='2.0.0'
     glideVersion = '4.4.0'
+    daggerVersion='2.5'
     gsonVersion='2.6.2'
     retrofitVersion='2.3.0'
     okhttpVersion = '3.9.0'
-    daggerVersion='2.5'
     rxandroidVersion='2.0.1'
     rxjavaVersion='2.1.8'
 }

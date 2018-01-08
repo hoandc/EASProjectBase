@@ -5,7 +5,7 @@ package evolable.asia.ui.base;
  *  Author HoanDC. Create on 1/3/2018.
  * ******************************************************************************
  */
-public interface MvpView {
+public interface MVPView {
     void showNoNetworkAlert();
 
     boolean isConnectToInternet();
